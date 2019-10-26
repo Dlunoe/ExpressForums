@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ForumsContainer from './Forums/ForumsContainer'
+import ForumsContainer from './Topics/ForumsContainer'
 
 function App() {
   return (

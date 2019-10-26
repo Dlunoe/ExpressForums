@@ -16,7 +16,7 @@ app.use(cors({
 
 const topicController = require('./controllers/topicController')
 
-app.use('/topic', topicController)
+app.use('/topics', topicController)
 
 app.listen(3001, ()=>{
     console.log("Server is servering")
