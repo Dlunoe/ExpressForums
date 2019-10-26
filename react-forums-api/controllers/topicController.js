@@ -64,6 +64,20 @@ router.put('/:id', async (req, res)=>{
     }
 })
 
+router.delete('/:id', async (req, res)=>{
+    try{
+        const deletedTopic = await Topic.findByIdAndRemove(req.params.id);
+        res.json({
+            status:{
+                code:200,
+                message: 'topic GONE'
+            },
+            data: deletedTopic
+        })
+    } catch(err){
+        res.send(err)
+    }
+})
 
 
 module.exports = router
