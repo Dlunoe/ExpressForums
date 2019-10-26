@@ -34,4 +34,19 @@ router.post('/', async (req,res)=>{
     }
 })
 
+router.get('/:id', async (req, res, next)=>{
+    try{
+        const foundTopic = await Topic.findById(req.params.id)
+        res.json({
+            status:{
+                code: 200,
+                message: "found the topic"
+            },
+            data:foundTopic
+        })
+    } catch(err){
+        res.send(err)
+    }
+})
+
 module.exports = router
