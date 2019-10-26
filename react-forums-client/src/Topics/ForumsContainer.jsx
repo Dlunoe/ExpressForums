@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Topics from './TopicList/Topics'
+import TopicShow from './TopicShow/TopicShow'
+import {Route, Switch, Redirect, Link} from 'react-router-dom'
 
 
 class ForumContainer extends Component {
@@ -33,7 +35,11 @@ class ForumContainer extends Component {
         return(
             <div>
                 This is forums container
-                <Topics topics={this.state.topics} />
+                <Switch>
+                    <Route exact path="/topics" render={(props)=> <Topics topics={this.state.topics} />}/>
+                    <Route path="/topics/:id" component={TopicShow} getTopics={this.getTopics} />
+                </Switch>
+                
             </div>
         )
     }
