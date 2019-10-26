@@ -17,6 +17,21 @@ router.get('/', async (req, res, next)=>{
     } catch(err){
         res.send(err)
     }
+});
+
+router.post('/', async (req,res)=>{
+    try{
+        const newTopic = await Topic.create(req.body)
+        res.json({
+            status:{
+                code:201,
+                message:"topic created"
+            },
+            data: newTopic
+        })
+    } catch(err){
+        res.send(err)
+    }
 })
 
 module.exports = router
