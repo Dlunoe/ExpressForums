@@ -49,4 +49,21 @@ router.get('/:id', async (req, res, next)=>{
     }
 })
 
+router.put('/:id', async (req, res)=>{
+    try{
+        const updatedTopic = await Topic.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        res.json({
+            status:{
+                code:200,
+                message: 'Topic updated'
+            },
+            data:updatedTopic
+        })
+    } catch(err){
+        res.send(err)
+    }
+})
+
+
+
 module.exports = router
