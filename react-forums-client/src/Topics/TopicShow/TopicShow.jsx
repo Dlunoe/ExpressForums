@@ -14,12 +14,25 @@ class TopicShow extends Component {
         const stringId = id.id
         this.findTopic(stringId)
     }
-    findReview = async(id)=>{
-        let singleTopic = await fetch('http://localhost:3001.topics'+id)
-        let objectTopic = await singleTopic.json(); 
-        console.log(objectTopic)
+    findTopic = async(id)=>{
+        let singleTopic = await fetch('http://localhost:3001/topics/'+id)
+        let objectTopic = await singleTopic.json(); let thisTopic = objectTopic.data
+        await console.log(thisTopic)
+        this.setState(prevState=>({
+            thisTopic
+        }))
     }
-
+    render(){
+        if(this.state.thisTopic==null){
+            return (<div>Topic not found</div>)
+        }
+        return(
+            <div>
+                <h2>{this.state.thisTopic.title}</h2>
+                <p>{this.state.thisTopic.body}</p>
+            </div>
+        )
+    }
 }
 
 export default TopicShow;
