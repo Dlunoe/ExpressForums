@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import ForumsContainer from './Topics/ForumsContainer'
+import ForumsContainer from './Components/Topics/ForumsContainer'
+import Navigation from './Components/Navigation/Navigation'
 
 function App() {
   return (
     <div>
+      <Navigation />
       <ForumsContainer />
     </div>
   );

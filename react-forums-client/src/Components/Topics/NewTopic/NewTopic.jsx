@@ -43,9 +43,9 @@ class NewTopic extends Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="title">Post title:</label>
+                    <label htmlFor="title">Post title:</label>
                     <input type="text" name="title" onChange={this.handleChange}/>
-                    <label for="body">Post body</label>
+                    <label htmlFor="body">Post body</label>
                     <textarea name="body" onChange={this.handleChange} />
                     <input type="submit" value="Submit Post" />
                 </form>
