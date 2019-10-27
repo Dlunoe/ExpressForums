@@ -9,6 +9,27 @@ class NewTopic extends Component {
             body: ''
         }
     }
+    createTopic = async (topic, formData)=>{
+        try{
+            const newTopic = await fetch('http://localhost:3001/topics', {
+                method: 'POST',
+                body: JSON.stringify(topic),
+                credentials: "include",
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            });
+            const newJSONtopic = await newTopic.json();
+            console.log(newJSONtopic)
+            var id = newJSONtopic.data._id
+            console.log(id)
+            // this.setState({topic: [...this.state.topics, newJSONtopic.data]})
+            // await <Redirect to='topics/' />
+            this.props.history.push(`/topics/${id}`)
+        } catch(err){
+            console.log(err)
+        }
+    }
     handleChange= (e) =>{
         this.setState({
             [e.target.name]: e.target.value
@@ -16,7 +37,7 @@ class NewTopic extends Component {
     }
     handleSubmit = (e)=>{
         e.preventDefault();
-        this.props.createTopic(this.state)
+        this.createTopic(this.state)
     }
     render(){
         return(
