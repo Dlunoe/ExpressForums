@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
+import Comments from './Comments/CommentsList';
 
 class TopicShow extends Component {
     constructor(){
@@ -30,6 +31,7 @@ class TopicShow extends Component {
             <div>
                 <h2>{this.state.thisTopic.title}</h2>
                 <p>{this.state.thisTopic.body}</p>
+                {/* <Comments comments={this.thisTopic.comments} /> */}
             </div>
         )
     }

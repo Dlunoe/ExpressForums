@@ -23,32 +23,12 @@ class ForumContainer extends Component {
                 throw Error(response.statusText)
             }
             const parsedTopics = await response.json()
-            console.log(parsedTopics)
+            // console.log(parsedTopics)
             await this.setState({topics: parsedTopics.data})
         } catch(err){
             return err
         }
     }
-    // createTopic = async (topic, formData)=>{
-    //     try{
-    //         const newTopic = await fetch('http://localhost:3001/topics', {
-    //             method: 'POST',
-    //             body: JSON.stringify(topic),
-    //             credentials: "include",
-    //             headers:{
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         });
-    //         const newJSONtopic = await newTopic.json();
-    //         console.log(newJSONtopic)
-    //         var id = newJSONtopic.data._id
-    //         console.log(id)
-    //         this.setState({topic: [...this.state.topics, newJSONtopic.data]})
-    //         // await <Redirect to='topics/' />
-    //     } catch(err){
-    //         console.log(err)
-    //     }
-    // }
 
 
     render(){
