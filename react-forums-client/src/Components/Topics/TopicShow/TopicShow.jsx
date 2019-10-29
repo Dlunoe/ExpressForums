@@ -11,7 +11,8 @@ class TopicShow extends Component {
             id: '',
             title: '',
             body:'',
-            comments:['']
+            comments:[''],
+            newComment: ''
         }
     }
     componentDidMount(){
@@ -35,10 +36,10 @@ class TopicShow extends Component {
     }
     handleChange=(e)=>{
         this.setState({
-            comments: e.target.value
+            newComment: e.target.value
         })
     }
-    handleSubmit =(e) =>{
+    handleSubmit = async (e) =>{
         e.preventDefault();
         this.addComment(this.state.id, this.state);
     }
@@ -55,6 +56,7 @@ class TopicShow extends Component {
             })
             const parsedResponse = await madeComment.json();
             console.log(parsedResponse);
+            await this.findTopic(id);
         }catch(err){
             console.log(err)
         }

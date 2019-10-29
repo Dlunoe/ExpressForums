@@ -55,7 +55,7 @@ router.put('/:id', async (req, res)=>{
     try{
         console.log(req.body.comments)
         console.log(req.params)
-        const updatedTopic = await Topic.findByIdAndUpdate(req.params.id, {$push:{comments:req.body.comments}}, {new:true})
+        const updatedTopic = await Topic.findByIdAndUpdate(req.params.id, {$push:{comments:req.body.newComment}}, {new:true})
         res.json({
             status:{
                 code:200,
