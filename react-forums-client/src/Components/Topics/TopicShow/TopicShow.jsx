@@ -68,7 +68,7 @@ class TopicShow extends Component {
             <div>
                 <h2>{this.state.title}</h2>
                 <p>{this.state.body}</p>
-                {/* <Comments comments={this.state.comments} /> */}
+                <Comments comments={this.state.comments} />
                 <div name="newComment">
                     <form onSubmit={this.handleSubmit}>
                         Leave a comment:

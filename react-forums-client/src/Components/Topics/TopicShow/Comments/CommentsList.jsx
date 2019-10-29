@@ -2,11 +2,11 @@ import React from 'react';
 
 
 const Comments = (props =>{
-    console.log(props.topic.comments)
-    const commentList = props.topic.map((comments, i)=>{
+    console.log(props.comments)
+    const commentList = props.comments.map((comment, i)=>{
         return(
-            <li key={comments._id}>
-                
+            <li key={i}>
+                <p>{comment}</p>
             </li>
         )
     })
