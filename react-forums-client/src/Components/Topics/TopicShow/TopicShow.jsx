@@ -11,7 +11,7 @@ class TopicShow extends Component {
             id: '',
             title: '',
             body:'',
-            comments:[]
+            comments:['']
         }
     }
     componentDidMount(){
@@ -40,12 +40,21 @@ class TopicShow extends Component {
     }
     handleSubmit =(e) =>{
         e.preventDefault();
-        this.addComment();
+        this.addComment(this.state.id, this.state);
     }
     addComment = async (id, formData) =>{
-        console.log(this.state.comment);
+        console.log(formData);
         try{
-            const madeComment = await fetch('http://localhost:3001/topics' + id)
+            const madeComment = await fetch('http://localhost:3001/topics/' + id,{
+                method: 'PUT',
+                credentials: 'include',
+                body: JSON.stringify(formData),
+                headers:{
+                    "Content-Type": "application/json"
+                }
+            })
+            const parsedResponse = await madeComment.json();
+            console.log(parsedResponse);
         }catch(err){
             console.log(err)
         }
