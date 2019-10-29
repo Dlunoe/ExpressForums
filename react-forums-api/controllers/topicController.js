@@ -53,6 +53,7 @@ router.get('/:id', async (req, res, next)=>{
 
 router.put('/:id', async (req, res)=>{
     try{
+        console.log(req.body)
         const updatedTopic = await Topic.findByIdAndUpdate(req.params.id, req.body, {new:true})
         res.json({
             status:{

@@ -6,7 +6,12 @@ class TopicShow extends Component {
     constructor(){
         super();
         this.state={
-            thisTopic: []
+            // thisTopic: [],
+            // comment: ''
+            id: '',
+            title: '',
+            body:'',
+            comments:[]
         }
     }
     componentDidMount(){
@@ -19,19 +24,49 @@ class TopicShow extends Component {
         let singleTopic = await fetch('http://localhost:3001/topics/'+id)
         let objectTopic = await singleTopic.json(); let thisTopic = objectTopic.data
         await console.log(thisTopic)
-        this.setState(prevState=>({
-            thisTopic
-        }))
+        if(thisTopic !== undefined){
+            this.setState(prevState=>({
+                id: thisTopic._id,
+                title: thisTopic.title,
+                body: thisTopic.body,
+                comments: thisTopic.comments
+            }))
+        }
     }
+    handleChange=(e)=>{
+        this.setState({
+            comments: e.target.value
+        })
+    }
+    handleSubmit =(e) =>{
+        e.preventDefault();
+        this.addComment();
+    }
+    addComment = async (id, formData) =>{
+        console.log(this.state.comment);
+        try{
+            const madeComment = await fetch('http://localhost:3001/topics' + id)
+        }catch(err){
+            console.log(err)
+        }
+    }
+    
     render(){
-        if(this.state.thisTopic==null){
+        if(this.state.title==''){
             return (<div>Topic not found</div>)
         }
         return(
             <div>
-                <h2>{this.state.thisTopic.title}</h2>
-                <p>{this.state.thisTopic.body}</p>
-                {/* <Comments topic={this.state.thisTopic} /> */}
+                <h2>{this.state.title}</h2>
+                <p>{this.state.body}</p>
+                {/* <Comments comments={this.state.comments} /> */}
+                <div name="newComment">
+                    <form onSubmit={this.handleSubmit}>
+                        Leave a comment:
+                        <textarea name="commentbox" onChange={this.handleChange} />
+                        <input type="submit" value="Add comment" />
+                    </form>
+                </div>  
             </div>
         )
     }
