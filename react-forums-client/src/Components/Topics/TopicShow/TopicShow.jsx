@@ -31,7 +31,7 @@ class TopicShow extends Component {
             <div>
                 <h2>{this.state.thisTopic.title}</h2>
                 <p>{this.state.thisTopic.body}</p>
-                {/* <Comments comments={this.thisTopic.comments} /> */}
+                {/* <Comments topic={this.state.thisTopic} /> */}
             </div>
         )
     }

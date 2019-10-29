@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const CommentSchema = new mongoose.Schema({
-    topic: {type: mongoose.Schema.Types.ObjectId, ref: "Topic"},
+    topic: String,
+    timestamp: true,
     body: String
 })
 
