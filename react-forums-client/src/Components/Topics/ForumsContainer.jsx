@@ -37,7 +37,7 @@ class ForumContainer extends Component {
             <div>
                 <h3>General Topics</h3>
                 <Switch>
-                    <Route exact path="/topics" render={(props)=> <Topics topics={this.state.topics} />}/>
+                    <Route exact path="/topics" render={(props)=> <Topics topics={this.state.topics} class="topic-list-container"/>}/>
                     <Route exact path="/topics/new" component={NewTopic} />
                     <Route path="/topics/:id" component={TopicShow} getTopics={this.getTopics} />
                 </Switch>             

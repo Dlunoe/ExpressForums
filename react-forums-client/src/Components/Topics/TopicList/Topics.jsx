@@ -6,7 +6,7 @@ const Topics = (props =>{
     const topicList = props.topics.map((topic, i)=>{
         return(
             <li key={topic._id} class="topic">
-                <Link to={`/topics/${topic._id}`} class="topic-name">
+                <Link to={`/topics/${topic._id}`} class="topic-name" title={topic.body}>
                 {topic.title}
                 </Link>
                 <p class="comment-length">{topic.comments.length} comments</p>
@@ -14,7 +14,7 @@ const Topics = (props =>{
         )
     })
     return(
-        <ul>{topicList}</ul>
+        <ul class="topic-list-container">{topicList}</ul>
     )
 })
 
