@@ -34,7 +34,7 @@ class ForumContainer extends Component {
 
     render(){
         return(
-            <div>
+            <div class="main-container">
                 <h3>General Topics</h3>
                 <Switch>
                     <Route exact path="/topics" render={(props)=> <Topics topics={this.state.topics} class="topic-list-container"/>}/>

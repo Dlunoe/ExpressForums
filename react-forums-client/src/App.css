@@ -22,5 +22,8 @@ a:visited{
   outline: 1px black;
 }
 
+.main-container{
+  margin:0 5%;
+}
 
 
