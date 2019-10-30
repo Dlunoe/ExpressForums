@@ -5,7 +5,7 @@ import Navigation from './Components/Navigation/Navigation'
 
 function App() {
   return (
-    <div>
+    <div class="App">
       <Navigation />
       <ForumsContainer />
     </div>

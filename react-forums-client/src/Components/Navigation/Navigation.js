@@ -1,14 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
+import '../../App.css';
+import {Button} from 'reactstrap';
 
 const Navigation = () => (
-    <div>
-        <ul>
+    <div class="Navigation">
+        <ul class="nav-list">
             <li>
-                <Link to={'/topics'}>Forums</Link>
+                <NavLink to={'/topics'} name="nav-forums">
+                    <Button>Topics</Button>
+                </NavLink>                
             </li>
-            <li>
-                <Link to={'/topics/new'}>New Topic</Link>
+            <li class="nav-button">
+                <NavLink to={'/topics/new'}>
+                    <Button>New Topic</Button>
+                </NavLink>
             </li>
         </ul>
     </div>
