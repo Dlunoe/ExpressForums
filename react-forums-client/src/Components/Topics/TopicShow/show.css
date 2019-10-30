@@ -1,0 +1,21 @@
+.original-post{
+    display: grid;
+    border:solid black;
+    width: auto;
+    min-height: 150px;
+    max-height: auto;
+}
+.post-title{
+    margin: 0px 5%;
+    text-align:left;
+    border-bottom: dotted black 1px;
+    display: inline-block;
+    height: 50px;
+}
+.post-body{
+    display: inline-block;
+    height: auto;
+    margin-left: 5%;
+    text-align: left;
+    white-space: normal;
+}

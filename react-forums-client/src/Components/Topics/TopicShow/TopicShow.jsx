@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import Comments from './Comments/CommentsList';
+import './show.css';
 
 class TopicShow extends Component {
     constructor(){
@@ -68,8 +69,10 @@ class TopicShow extends Component {
         }
         return(
             <div>
-                <h2>{this.state.title}</h2>
-                <p>{this.state.body}</p>
+                <div class="original-post">
+                    <h2 class="post-title">{this.state.title}</h2>
+                    <p class="post-body">{this.state.body}</p>
+                </div>
                 <Comments comments={this.state.comments} />
                 <div name="newComment">
                     <form onSubmit={this.handleSubmit}>
