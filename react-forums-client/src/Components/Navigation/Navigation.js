@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink, Redirect} from 'react-router-dom';
 import '../../App.css';
 import {Button} from 'reactstrap';
+import './Nav.css'
 
 const Navigation = () => (
     <div class="Navigation">
