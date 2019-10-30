@@ -3,6 +3,7 @@ import Topics from './TopicList/Topics'
 import TopicShow from './TopicShow/TopicShow'
 import NewTopic from './NewTopic/NewTopic'
 import {Route, Switch, Redirect, Link} from 'react-router-dom'
+import '../../App.css'
 
 
 class ForumContainer extends Component {
@@ -34,7 +35,7 @@ class ForumContainer extends Component {
     render(){
         return(
             <div>
-                This is forums container
+                <h3>General Topics</h3>
                 <Switch>
                     <Route exact path="/topics" render={(props)=> <Topics topics={this.state.topics} />}/>
                     <Route exact path="/topics/new" component={NewTopic} />

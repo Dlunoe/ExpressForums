@@ -4,7 +4,10 @@
   height: fill;
   padding: 5px;
 }
-
+ul{
+  list-style: none;
+  padding: 0;
+}
 a:link{
   color:black;
   padding: 5px;
