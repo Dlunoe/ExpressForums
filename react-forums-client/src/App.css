@@ -2,10 +2,13 @@
   text-align: center;
   /* display: flex; */
   height: fill;
+  padding: 5px;
 }
 
 .Navigation{
-  display: flex;
+  display: grid;
+  grid-column: 1 2;
+  width: 100%;
 }
 a:link{
   color:black;
@@ -20,13 +23,22 @@ a:visited{
   margin: 5px;
   outline: 1px black;
 }
-Button:hover{
-  color:black;
+.topic-button{
+  padding: 5%;
+  grid-column: 1;
 }
-.nav-button{
-  margin: 5px;
-  outline: 1px black;
+.new-button{
+  size: auto;
+  grid-column: 3;
+  padding: 5%;
+}
+.site-title{
+  grid-column: 2;
+  padding: 5px;
+  margin: 0;
 }
 .nav-list{
 list-style: none;
+display:grid;
+padding: 0;
 }
