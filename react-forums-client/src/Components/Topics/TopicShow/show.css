@@ -4,11 +4,13 @@
     width: auto;
     min-height: 150px;
     max-height: auto;
+    color:white;
+    background-color:black;
 }
 .post-title{
     margin: 0px 5%;
     text-align:left;
-    border-bottom: dotted black 1px;
+    border-bottom: dotted white 1px;
     display: inline-block;
     height: 50px;
 }

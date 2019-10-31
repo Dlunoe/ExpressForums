@@ -1,10 +1,12 @@
 .comment{
     padding-top: 5%;
     display: grid;
-    border:solid black;
+    border:solid white 5px;
     width: auto;
     min-height: 150px;
     max-height: auto;
+    color:white;
+    background-color:black;
 }
 .comment-body{
     display: inline-block;
