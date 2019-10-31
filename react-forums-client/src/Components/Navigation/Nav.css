@@ -2,7 +2,7 @@
     display: grid;
     grid-column: 1 2;
     width: 100%;
-    border-bottom: 2px  solid black;
+    border-bottom: 2px  solid white;
   }
   .topic-button{
     padding: 5%;

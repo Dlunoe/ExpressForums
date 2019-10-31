@@ -68,7 +68,7 @@ class TopicShow extends Component {
             return (<div>Topic not found</div>)
         }
         return(
-            <div>
+            <div class="whole-post">
                 <div class="original-post">
                     <h2 class="post-title">{this.state.title}</h2>
                     <p class="post-body">{this.state.body}</p>

@@ -42,7 +42,7 @@ class NewTopic extends Component {
     }
     render(){
         return(
-            <div>
+            <div class="form-div">
                 <form onSubmit={this.handleSubmit} class="topic-form">
                     {/* <label htmlFor="title" class="titleLabel">Post title:</label> */}
                     <input type="text" class="title" name="title" onChange={this.handleChange} placeholder={"Title your post"}/>
