@@ -13,7 +13,8 @@ a:link{
   padding: 5px;
   border: 1px black;
 }
-a:hover{
+a:hover, a:active{
+  text-decoration: none;
   color:white;
 }
 a:visited{

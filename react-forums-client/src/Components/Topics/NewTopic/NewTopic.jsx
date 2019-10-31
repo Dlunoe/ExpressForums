@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
+import './new.css'
 
 class NewTopic extends Component {
     constructor(){
@@ -42,12 +43,12 @@ class NewTopic extends Component {
     render(){
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="title">Post title:</label>
-                    <input type="text" name="title" onChange={this.handleChange}/>
-                    <label htmlFor="body">Post body</label>
-                    <textarea name="body" onChange={this.handleChange} />
-                    <input type="submit" value="Submit Post" />
+                <form onSubmit={this.handleSubmit} class="topic-form">
+                    {/* <label htmlFor="title" class="titleLabel">Post title:</label> */}
+                    <input type="text" class="title" name="title" onChange={this.handleChange} placeholder={"Title your post"}/>
+                    {/* <label htmlFor="body" class="bodyLabel">Post body</label> */}
+                    <textarea name="body" class="body" onChange={this.handleChange} placeholder={"Body"} rows="5" cols="65"/>
+                    <input type="submit" value="Submit Post" class="btn btn-outline-secondary" class="topic-submit" name="topic-submit"/>
                 </form>
             </div>
         )
