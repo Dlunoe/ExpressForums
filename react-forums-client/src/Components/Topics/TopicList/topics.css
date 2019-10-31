@@ -3,11 +3,14 @@
     grid-column: 1 1;
     border: solid black 1px;
     margin: 5px;
+    color:white;
+    background-color:black;
 }
 .topic-name{
     grid-column: 1;
     grid-row: 1;
     text-align: left;
+    color:white;
 }
 .comment-length{
     padding: 2px 5px 2px 2px;

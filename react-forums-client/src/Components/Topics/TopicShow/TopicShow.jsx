@@ -75,10 +75,10 @@ class TopicShow extends Component {
                 </div>
                 <Comments comments={this.state.comments} />
                 <div name="newComment">
-                    <form onSubmit={this.handleSubmit}>
-                        Leave a comment:
-                        <textarea name="commentbox" onChange={this.handleChange} />
-                        <input type="submit" value="Add comment" />
+                    <form onSubmit={this.handleSubmit} name="newComment">
+                        <textarea name="commentbox" onChange={this.handleChange}
+                        rows="5" cols="65" placeholder={"Leave a comment"}/><br/>
+                        <input type="submit" value="Add comment" name="commentsubmit" class="btn btn-outline-secondary"/>
                     </form>
                 </div>  
             </div>

@@ -22,3 +22,24 @@
     white-space: normal;
     padding: 3%;
 }
+.newComment{
+    display: flex;
+    background-color: black;
+}
+.comment-tag{
+    grid-row: 1;
+    grid-column: 1;
+    width: 20%;
+    align-items:left;
+    color:green;
+}
+
+.commentbox{
+    grid-row: 2/3;
+    grid-column: 2;
+}
+.commentsubmit{
+    grid-row: 4;
+    grid-column: 3;
+    color:red;
+}

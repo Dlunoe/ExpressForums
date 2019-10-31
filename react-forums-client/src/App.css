@@ -9,15 +9,15 @@ ul{
   padding: 0;
 }
 a:link{
-  color:black;
+  color:white;
   padding: 5px;
   border: 1px black;
 }
 a:hover{
-  color:black;
+  color:white;
 }
 a:visited{
-  color:black;
+  color:white;
   margin: 5px;
   outline: 1px black;
 }
